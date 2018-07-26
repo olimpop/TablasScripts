@@ -181,32 +181,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        //Path path; 
-//        Workbook wb = new XSSFWorkbook();
-//        Sheet sheet = wb.createSheet();
-//        Row row = sheet.createRow(2);
-//        TableModel model = jtQuery.getModel();
-//        
-//        Row headerRow = sheet.createRow(0);
-//        
-//        for (int heading= 0; heading < model.getColumnCount(); heading++) {
-//            headerRow.createCell(heading).setCellValue(model.getColumnName(heading));            
-//        }
-//        
-//        for (int rows = 0; rows < model.getRowCount(); rows++) {
-//            for (int cols = 0; cols < jtQuery.getColumnCount(); cols++) {
-//                row.createCell(cols).setCellValue(model.getValueAt(rows, cols).toString());
-//            }
-//            row = sheet.createRow(rows+3);
-//        }
-//        Date now = new Date(System.currentTimeMillis());
-//        try {
-//            FileOutputStream file = new FileOutputStream("Exportar_2007" + now + ".xlsx");
-//            wb.write(file);    
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet();
         workbook.setSheetName(0, "Hoja_Resultados");        
