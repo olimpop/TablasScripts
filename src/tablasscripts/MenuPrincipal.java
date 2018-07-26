@@ -181,11 +181,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet();
-        workbook.setSheetName(0, "Hoja_Resultados");        
-        XSSFRow headerRow = sheet.createRow(0);        
+        workbook.setSheetName(0, "Hoja_Resultados");
+        XSSFRow headerRow = sheet.createRow(0);
         TableModel model = jtQuery.getModel();
         CellStyle headerStyle = workbook.createCellStyle();
         Font font = workbook.createFont();
@@ -195,7 +195,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         headerStyle.setBorderTop(XSSFCellStyle.BORDER_THIN);
         headerStyle.setBorderRight(XSSFCellStyle.BORDER_THIN);
         headerStyle.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-        
+
         for (int i = 0; i < model.getColumnCount(); ++i) {
             String header = model.getColumnName(i);
             XSSFCell cell = headerRow.createCell(i);
@@ -203,22 +203,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
             cell.setCellValue(header);
             sheet.autoSizeColumn(i);
         }
-        XSSFRow row = sheet.createRow(1);         
-          for (int rows = 0; rows < model.getRowCount(); rows++) {
+        XSSFRow row = sheet.createRow(1);
+        for (int rows = 0; rows < model.getRowCount(); rows++) {
             for (int cols = 0; cols < jtQuery.getColumnCount(); cols++) {
                 row.createCell(cols).setCellValue(model.getValueAt(rows, cols).toString());
             }
-              row = sheet.createRow(rows+2);
+            row = sheet.createRow(rows + 2);
         }
-        
-        
+
         Date now = new Date(System.currentTimeMillis());
         try {
-            FileOutputStream file = new FileOutputStream("Resultados"+ now+ ".xlsx");
+            FileOutputStream file = new FileOutputStream("Resultados" + now + ".xlsx");
             workbook.write(file);
         } catch (Exception e) {
             e.printStackTrace();
-        }        
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

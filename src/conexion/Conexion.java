@@ -15,6 +15,7 @@ public class Conexion {
 
     private Connection cnx;
     private boolean conect = false;
+
     public void Conectar() {
         try {
             String driver = "org.postgresql.Driver";
@@ -47,9 +48,11 @@ public class Conexion {
             e.printStackTrace();
         }
     }
+
     public boolean isConectado() {
         return conect;
     }
+
     public Connection getConexion() {
         return this.cnx;
     }
